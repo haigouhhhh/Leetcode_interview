@@ -1,0 +1,16 @@
+66.Plus_One
+class Solution {
+//go through the array from tail to head if num[i]!=9 num[i]+=1 return else continue 
+    public int[] plusOne(int[] digits) {
+        for(int i=digits.length-1;i>=0;i--){
+            if(digits[i]<9){
+                digits[i]++;
+                return digits;
+            }
+            digits[i]=0;
+        }
+        int[] ans=new int[digits.length+1];
+        ans[0]=1;
+        return ans;
+    }
+}

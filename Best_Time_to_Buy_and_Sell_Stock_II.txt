@@ -1,0 +1,20 @@
+122.Best Time to Buy and Sell Stock II
+
+class Solution {
+//go through the array and find each pair of (vallery,peak)  
+//time O(n)
+//space O(1)
+    public int maxProfit(int[] prices) {
+        int sum=0;
+        for(int i=0;i<prices.length;i++){
+            while(i+1<prices.length&&prices[i+1]<prices[i])
+                i++;
+            int min=prices[i];
+            while(i+1<prices.length&&prices[i+1]>prices[i])
+                i++;
+            int max=prices[i];
+            sum=sum+max-min;
+        }
+        return sum;
+    }
+}

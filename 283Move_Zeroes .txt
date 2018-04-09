@@ -1,0 +1,19 @@
+283Move_Zeroes
+
+class Solution 
+{
+// use a pointer j records the last index of the non-zero number, go through nums[i] , if nums[i]!=0 update nums[j]
+    public void moveZeroes(int[] nums) 
+    {
+        int j=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                nums[j]=nums[i];
+                if(i!=j){
+                    nums[i]=0;
+                }
+                j++;
+            }
+        }
+    }
+}
